@@ -5,13 +5,13 @@
 
 This cloud-init file may work with multipass on Linux and MacOS also but I haven't tested it. 
 
-####The basic idea:
+#### The basic idea:
 
 Multipass allows the use of a cloud-init file to specify how the vm will be configured when it is built, and the main purpose of my use of Multipass is to create docker swarm and Kubernetes clusters locally for educational use, along with trying out different linux things. This means I occasionaly bork an ubuntu vm and can then easily delete it and start over. Updating and installing docker over and over again was not optimal so I automated it. 
 
 I also need my machine clean and free of VM's for work (which isn't programming) so I needed a simple way to provision and remove them that worked with everything else I have going on. VirtualBox wasn't cutting it but this works great. 
 
-####To use: 
+#### To use: 
 
 1. Install Multipass on your system. Visit [the Multipass homepage](https://multipass.run/ "Multipass homepage") and scroll down to the "Install Multipass" header, and click on the installer for windows. 
 
@@ -36,4 +36,4 @@ I also need my machine clean and free of VM's for work (which isn't programming)
 8. When you are done with the VM, there is a 2 part process to remove it. `multipass delete node1` will stop the machine and delete it from active use, but it's not actually gone yet. (This is a failsafe against deleting things by accident in case you have something you need in a VM). To fully remove the VM you need to run `multipass purge` after the delete command and the VM will be permanently deleted. 
 
 
-##### Hopefully this helps someone, Have fun and good luck! 
+#### Hopefully this helps someone, Have fun and good luck! 
