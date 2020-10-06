@@ -1,0 +1,20 @@
+# create the docker group
+groups:
+    - docker
+   
+# add the default user 
+users:
+    - default
+    - name: ubuntu
+    - sudo: ALL=(ALL) NOPASSWD:ALL
+    - groups: sudo, docker
+
+# run updates and install docker
+runcmd:
+    - 'sudo apt-get update'
+    - 'sudo apt-get upgrade -y'
+    - 'curl -fsSL https://get.docker.com -o get-docker.sh'
+    - 'sudo sh get-docker.sh'
+
+
+        
